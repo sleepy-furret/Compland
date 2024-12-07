@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://cjou8cx0a3v0a"
+path="res://.godot/imported/drone02_screen01_ilikebreacktime.dialogue-8fedfc002912a1656889b6f5535de602.tres"
+
+[deps]
+
+source_file="res://dialogues/start/drone02_screen01_ilikebreacktime.dialogue"
+dest_files=["res://.godot/imported/drone02_screen01_ilikebreacktime.dialogue-8fedfc002912a1656889b6f5535de602.tres"]
+
+[params]
+
+defaults=true

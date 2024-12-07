@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://chac60ae0oius"
+path="res://.godot/imported/dronenpcmini.dialogue-9118b176a1f56ef1879ee8421f8420e4.tres"
+
+[deps]
+
+source_file="res://dialogues/dronenpcmini.dialogue"
+dest_files=["res://.godot/imported/dronenpcmini.dialogue-9118b176a1f56ef1879ee8421f8420e4.tres"]
+
+[params]
+
+defaults=true
