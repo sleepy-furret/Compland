@@ -1,0 +1,36 @@
+[gd_scene load_steps=4 format=3 uid="uid://7ct4ejns3nmy"]
+
+[ext_resource type="Script" path="res://restart_button.gd" id="1_ajcgq"]
+[ext_resource type="FontFile" uid="uid://68pbj7jd4v7q" path="res://HelvetiPixel.ttf" id="2_4wwts"]
+[ext_resource type="Texture2D" uid="uid://02b4710u4fij" path="res://Sprites/TileSet.png" id="3_ba2lx"]
+
+[node name="TextureButton" type="TextureButton"]
+offset_left = 361.0
+offset_top = 460.0
+offset_right = 683.0
+offset_bottom = 555.0
+script = ExtResource("1_ajcgq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(1, 37)
+scale = Vector2(3, 3)
+texture = ExtResource("3_ba2lx")
+hframes = 32
+vframes = 32
+frame = 1013
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 58.0
+offset_top = 10.0
+offset_right = 244.0
+offset_bottom = 66.0
+theme_override_fonts/normal_font = ExtResource("2_4wwts")
+theme_override_font_sizes/normal_font_size = 66
+bbcode_enabled = true
+text = "Restart"
+scroll_active = false
+
+[connection signal="focus_entered" from="." to="." method="_on_rich_text_label_focus_entered"]
+[connection signal="focus_exited" from="." to="." method="_on_focus_exited"]

@@ -1,0 +1,15 @@
+[gd_resource type="Theme" load_steps=4 format=3 uid="uid://berfutthg0pe4"]
+
+[ext_resource type="FontFile" uid="uid://68pbj7jd4v7q" path="res://HelvetiPixel.ttf" id="1_mjfqi"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ikwtc"]
+bg_color = Color(0.614745, 0.614745, 0.614745, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sou56"]
+bg_color = Color(0, 0, 0, 1)
+
+[resource]
+default_font = ExtResource("1_mjfqi")
+default_font_size = 45
+ProgressBar/styles/background = SubResource("StyleBoxFlat_ikwtc")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_sou56")

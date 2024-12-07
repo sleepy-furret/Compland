@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://cmpd7a8024w8e"]
+
+[ext_resource type="Script" path="res://sounds.gd" id="1_73oo7"]
+[ext_resource type="AudioStream" uid="uid://wygyqbgtofjo" path="res://wind-blowing-sfx-12809.mp3" id="2_1lefq"]
+[ext_resource type="AudioStream" uid="uid://mgx2yydlwbjt" path="res://hitHurt.wav" id="3_46yre"]
+[ext_resource type="AudioStream" uid="uid://dghe6a72d60sa" path="res://beach-waves(chosic.com).mp3" id="4_123wl"]
+[ext_resource type="AudioStream" uid="uid://mje4x8sodfqc" path="res://descover.wav" id="5_vvjlw"]
+
+[node name="Node" type="Node"]
+script = ExtResource("1_73oo7")
+
+[node name="wind_sound" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("2_1lefq")
+volume_db = -7.362
+
+[node name="hurt01_sound" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("3_46yre")
+volume_db = -1.268
+
+[node name="beach_sound" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("4_123wl")
+
+[node name="descover_sound" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("5_vvjlw")
+volume_db = -2.863

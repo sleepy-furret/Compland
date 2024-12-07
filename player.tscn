@@ -1,0 +1,311 @@
+[gd_scene load_steps=18 format=3 uid="uid://dfeeu362qx4cd"]
+
+[ext_resource type="Script" path="res://Player.gd" id="1_2h2wk"]
+[ext_resource type="Texture2D" uid="uid://02b4710u4fij" path="res://Sprites/TileSet.png" id="2_ruv8q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_otvn2"]
+size = Vector2(39, 32)
+
+[sub_resource type="Animation" id="Animation_bly3p"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(22, 31)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Marker2D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [3.14159]
+}
+
+[sub_resource type="Animation" id="Animation_podab"]
+resource_name = "Reset down"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(22, 31)]
+}
+
+[sub_resource type="Animation" id="Animation_tml7k"]
+resource_name = "Reset left"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(30, 31)]
+}
+
+[sub_resource type="Animation" id="Animation_r4xmk"]
+resource_name = "Reset right"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(28, 31)]
+}
+
+[sub_resource type="Animation" id="Animation_uder1"]
+resource_name = "Reset up"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(25, 31)]
+}
+
+[sub_resource type="Animation" id="Animation_bocj1"]
+resource_name = "attacked"
+length = 2.4
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.8, 1.2, 1.6, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(22, 30), Vector2i(23, 30), Vector2i(24, 30), Vector2i(25, 30), Vector2i(26, 30), Vector2i(27, 30)]
+}
+
+[sub_resource type="Animation" id="Animation_kbi2o"]
+resource_name = "down"
+length = 0.5
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Vector2i(23, 31), Vector2i(24, 31)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Marker2D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_fk3ju"]
+resource_name = "left"
+length = 0.5
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Vector2i(30, 31), Vector2i(31, 31)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Marker2D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.5708]
+}
+
+[sub_resource type="Animation" id="Animation_lfpam"]
+resource_name = "right"
+length = 0.5
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Vector2i(28, 31), Vector2i(29, 31)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Marker2D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-1.5708]
+}
+
+[sub_resource type="Animation" id="Animation_rfk7r"]
+resource_name = "up"
+length = 0.5
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Vector2i(26, 31), Vector2i(27, 31)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Marker2D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [3.14159]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wnxpj"]
+_data = {
+"RESET": SubResource("Animation_bly3p"),
+"Reset down": SubResource("Animation_podab"),
+"Reset left": SubResource("Animation_tml7k"),
+"Reset right": SubResource("Animation_r4xmk"),
+"Reset up": SubResource("Animation_uder1"),
+"attacked": SubResource("Animation_bocj1"),
+"down": SubResource("Animation_kbi2o"),
+"left": SubResource("Animation_fk3ju"),
+"right": SubResource("Animation_lfpam"),
+"up": SubResource("Animation_rfk7r")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_85c1v"]
+size = Vector2(43, 34)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4n6hn"]
+size = Vector2(45, 48)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_lg8ok"]
+polygon = PackedVector2Array(20, -3, 20, -31, -18, -31, -18, -3)
+
+[node name="Player" type="CharacterBody2D"]
+position = Vector2(0, -1)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_2h2wk")
+
+[node name="player_shadow" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.564706)
+texture_filter = 1
+position = Vector2(0, -1)
+scale = Vector2(1.35937, 1.35937)
+texture = ExtResource("2_ruv8q")
+hframes = 32
+vframes = 64
+frame = 32
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-1, -29)
+scale = Vector2(3, 3)
+texture = ExtResource("2_ruv8q")
+hframes = 32
+vframes = 32
+frame = 1014
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, -17)
+shape = SubResource("RectangleShape2D_otvn2")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_wnxpj")
+}
+
+[node name="Area2D" type="Area2D" parent="." groups=["Player"]]
+position = Vector2(-1, -29)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1.5, 11)
+shape = SubResource("RectangleShape2D_85c1v")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(-1, -19)
+rotation = 3.14159
+
+[node name="Area2D" type="Area2D" parent="Marker2D" groups=["player_front"]]
+position = Vector2(-1, 17)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marker2D/Area2D"]
+position = Vector2(0.5, 16)
+shape = SubResource("RectangleShape2D_4n6hn")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_lg8ok")
+sdf_collision = false

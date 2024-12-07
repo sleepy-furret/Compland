@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=3 uid="uid://ce634hhqefw7x"]
+
+[ext_resource type="Script" path="res://start-button.gd" id="1_riuac"]
+[ext_resource type="Texture2D" uid="uid://02b4710u4fij" path="res://Sprites/TileSet.png" id="2_hq3ii"]
+[ext_resource type="FontFile" uid="uid://68pbj7jd4v7q" path="res://HelvetiPixel.ttf" id="3_0q4kj"]
+
+[node name="Button" type="TextureButton"]
+offset_left = 461.0
+offset_top = 314.0
+offset_right = 677.0
+offset_bottom = 381.0
+focus_neighbor_bottom = NodePath("../Button2")
+script = ExtResource("1_riuac")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(13, 33)
+scale = Vector2(2, 2)
+texture = ExtResource("2_hq3ii")
+hframes = 32
+vframes = 32
+frame = 1013
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 68.0
+offset_top = 15.0
+offset_right = 247.0
+offset_bottom = 58.0
+theme_override_fonts/normal_font = ExtResource("3_0q4kj")
+theme_override_font_sizes/normal_font_size = 41
+bbcode_enabled = true
+text = "Start"
+
+[connection signal="focus_entered" from="." to="." method="_on_rich_text_label_focus_entered"]
+[connection signal="focus_exited" from="." to="." method="_on_focus_exited"]

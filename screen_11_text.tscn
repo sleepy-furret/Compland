@@ -1,0 +1,60 @@
+[gd_scene load_steps=3 format=3 uid="uid://d0krxx5p3ednw"]
+
+[ext_resource type="Script" path="res://screen_11_text.gd" id="1_xe3n8"]
+[ext_resource type="FontFile" uid="uid://68pbj7jd4v7q" path="res://HelvetiPixel.ttf" id="2_mm2uy"]
+
+[node name="screen_11_text" type="Node2D"]
+script = ExtResource("1_xe3n8")
+
+[node name="background" type="ColorRect" parent="."]
+offset_right = 1276.0
+offset_bottom = 801.0
+color = Color(0, 0, 0, 1)
+
+[node name="text" type="Label" parent="."]
+unique_name_in_owner = true
+texture_filter = 1
+offset_top = 692.0
+offset_right = 1157.0
+offset_bottom = 1437.0
+theme_override_fonts/font = ExtResource("2_mm2uy")
+theme_override_font_sizes/font_size = 36
+text = "After passing thought this place,
+the shade entered in a boat and navigated thought an
+unnamed sea.
+
+The navigation was long.
+During that time, the shade wrote this in a paper it found:
+
+\"I am lost, in this large place.
+I guess it would be an good thing if i reached a the location.
+I hope that in the path i have at least some fun,
+even if i do not even know where i am going.
+If i'm very lucky i could be able to get to my objective.
+I need to accept that, because things are not going any better.\"
+
+He wrote other things too, but any of them were meaningfull.
+
+After hours of wait, that thing have reached a place.
+It still does not know what place it is.
+It feels great; in some way."
+horizontal_alignment = 1
+
+[node name="text2" type="Label" parent="."]
+unique_name_in_owner = true
+texture_filter = 1
+offset_top = 1674.0
+offset_right = 1157.0
+offset_bottom = 2432.47
+theme_override_fonts/font = ExtResource("2_mm2uy")
+theme_override_font_sizes/font_size = 36
+text = "We can just imagine..."
+horizontal_alignment = 1
+
+[node name="text2_stop" type="Marker2D" parent="."]
+position = Vector2(0, 324)
+
+[node name="indicator1" type="ColorRect" parent="."]
+visible = false
+offset_right = 40.0
+offset_bottom = 40.0
