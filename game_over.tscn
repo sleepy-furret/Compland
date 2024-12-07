@@ -1,0 +1,310 @@
+[gd_scene load_steps=10 format=3 uid="uid://bj44amnu776gh"]
+
+[ext_resource type="Script" path="res://game over.gd" id="1_nibye"]
+[ext_resource type="Texture2D" uid="uid://02b4710u4fij" path="res://Sprites/TileSet.png" id="3_v1hax"]
+[ext_resource type="PackedScene" path="res://start-button.tscn" id="4_fy2i5"]
+
+[sub_resource type="Animation" id="Animation_tfj6i"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(22, 28)]
+}
+
+[sub_resource type="Animation" id="Animation_1fi7l"]
+resource_name = "death_symbol"
+length = 2.5
+step = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.9, 1.2, 1.5, 1.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(22, 28), Vector2i(23, 28), Vector2i(24, 28), Vector2i(25, 28), Vector2i(26, 28), Vector2i(27, 28), Vector2i(28, 28)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_e7jjx"]
+_data = {
+"RESET": SubResource("Animation_tfj6i"),
+"death_symbol": SubResource("Animation_1fi7l")
+}
+
+[sub_resource type="Animation" id="Animation_g4cv2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../piece02:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(14, -103)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(4, -105)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../piece03:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, -94)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../piece04:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2, -114)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../piece05:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(25, -115)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../piece06:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(575, 325)]
+}
+
+[sub_resource type="Animation" id="Animation_ho24n"]
+resource_name = "death_anim"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../piece02:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(545, 297), Vector2(1201, 313)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(513, 292), Vector2(-47, 308)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../piece03:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(504, 324), Vector2(250, 694)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../piece04:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(510, 264), Vector2(74, -52)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../piece05:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(579, 264), Vector2(1015, -56)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../piece06:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(575, 325), Vector2(1200, 694)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_l34tn"]
+_data = {
+"RESET": SubResource("Animation_g4cv2"),
+"death_anim": SubResource("Animation_ho24n")
+}
+
+[node name="game over" type="Node2D"]
+script = ExtResource("1_nibye")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -81.0
+offset_top = -66.0
+offset_right = 1399.0
+offset_bottom = 847.0
+color = Color(0, 0, 0, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(2, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D"]
+
+[node name="Button" parent="." instance=ExtResource("4_fy2i5")]
+offset_left = 469.0
+offset_top = 448.0
+offset_right = 685.0
+offset_bottom = 515.0
+text = "Menu"
+
+[node name="Button2" parent="." instance=ExtResource("4_fy2i5")]
+offset_left = 467.0
+offset_top = 547.0
+offset_right = 683.0
+offset_bottom = 614.0
+focus_neighbor_top = NodePath("../Button")
+focus_neighbor_bottom = NodePath("")
+text = "Quit"
+
+[node name="death sprite" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(532.64, 294.84)
+scale = Vector2(3, 3)
+texture = ExtResource("3_v1hax")
+hframes = 32
+vframes = 32
+frame = 918
+
+[node name="death animation" type="AnimationPlayer" parent="death sprite"]
+libraries = {
+"": SubResource("AnimationLibrary_e7jjx")
+}
+
+[node name="piece01" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(4, -105)
+scale = Vector2(3, 3)
+texture = ExtResource("3_v1hax")
+hframes = 32
+vframes = 32
+frame = 854
+
+[node name="piece anim" type="AnimationPlayer" parent="piece01"]
+libraries = {
+"": SubResource("AnimationLibrary_l34tn")
+}
+
+[node name="piece02" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(14, -103)
+scale = Vector2(3, 3)
+texture = ExtResource("3_v1hax")
+hframes = 32
+vframes = 32
+frame = 855
+
+[node name="piece03" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(1, -94)
+scale = Vector2(3, 3)
+texture = ExtResource("3_v1hax")
+hframes = 32
+vframes = 32
+frame = 856
+
+[node name="piece04" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(2, -114)
+scale = Vector2(3, 3)
+texture = ExtResource("3_v1hax")
+hframes = 32
+vframes = 32
+frame = 857
+
+[node name="piece05" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(25, -115)
+scale = Vector2(3, 3)
+texture = ExtResource("3_v1hax")
+hframes = 32
+vframes = 32
+frame = 858
+
+[node name="piece06" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(575, 325)
+scale = Vector2(3, 3)
+texture = ExtResource("3_v1hax")
+hframes = 32
+vframes = 32
+frame = 859
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(538, 296)
+
+[connection signal="button_down" from="Button" to="." method="_on_menu_button_down"]
+[connection signal="button_down" from="Button2" to="." method="_on_quit02_button_down"]

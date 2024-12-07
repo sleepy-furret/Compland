@@ -1,0 +1,95 @@
+[gd_scene load_steps=8 format=3 uid="uid://bpga0kapt5obx"]
+
+[ext_resource type="Script" path="res://fade.gd" id="1_s02km"]
+[ext_resource type="Texture2D" uid="uid://ci3bbrta8t3wh" path="res://icon.svg" id="2_nug41"]
+
+[sub_resource type="Animation" id="Animation_44c0q"]
+resource_name = "3sfade_in"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_r0cq5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ju34a"]
+resource_name = "fade_in"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ng6td"]
+resource_name = "fade_out"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rfj2m"]
+_data = {
+"3sfade_in": SubResource("Animation_44c0q"),
+"RESET": SubResource("Animation_r0cq5"),
+"fade_in": SubResource("Animation_ju34a"),
+"fade_out": SubResource("Animation_ng6td")
+}
+
+[node name="fade" type="Node2D"]
+script = ExtResource("1_s02km")
+
+[node name="fadeinout" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+modulate = Color(0, 0, 0, 1)
+visibility_layer = 3
+z_index = 30
+position = Vector2(520.5, 178)
+scale = Vector2(100000, 77559.4)
+texture = ExtResource("2_nug41")
+
+[node name="fadeinoutanimation" type="AnimationPlayer" parent="fadeinout"]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_rfj2m")
+}
+
+[connection signal="animation_finished" from="fadeinout/fadeinoutanimation" to="." method="_on_fadeinoutanimation_animation_finished"]

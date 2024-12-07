@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://dr4rq4o6c8l8g"]
+
+[ext_resource type="Script" path="res://clothes.gd" id="1_wu45r"]
+[ext_resource type="Texture2D" uid="uid://02b4710u4fij" path="res://Sprites/TileSet.png" id="2_2wxxh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7c8kp"]
+size = Vector2(38, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ivjcv"]
+size = Vector2(38, 12)
+
+[node name="clothes" type="StaticBody2D"]
+script = ExtResource("1_wu45r")
+
+[node name="clothes_sprite" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-4, -31)
+texture = ExtResource("2_2wxxh")
+hframes = 16
+vframes = 16
+frame = 241
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, -6)
+shape = SubResource("RectangleShape2D_7c8kp")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(2, -6)
+shape = SubResource("RectangleShape2D_ivjcv")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

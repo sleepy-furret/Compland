@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=3 uid="uid://bxq8a5ibea0r1"]
+
+[ext_resource type="Script" path="res://gate03.gd" id="1_5qjom"]
+[ext_resource type="Texture2D" uid="uid://02b4710u4fij" path="res://Sprites/TileSet.png" id="2_8k411"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rqak0"]
+size = Vector2(120.75, 80.4286)
+
+[node name="gate01" type="Node2D"]
+position = Vector2(-1, 0)
+scale = Vector2(0.7, 0.7)
+script = ExtResource("1_5qjom")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-1.42857, -38.5714)
+shape = SubResource("RectangleShape2D_rqak0")
+
+[node name="Area2D" type="Area2D" parent="." groups=["gate01"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0.125, -41.2143)
+shape = SubResource("RectangleShape2D_rqak0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-0.857143, -95.1429)
+scale = Vector2(3.80357, 3.89286)
+texture = ExtResource("2_8k411")
+hframes = 32
+vframes = 21
+frame = 641
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.1
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
